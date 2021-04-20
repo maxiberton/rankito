@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Rankito - Iniciar sesión
+{% endblock %}
+
+
+{% block content %}
+
+
+    <h1 class="titulo-inicio-sesion">¡Ingresá para comenzar a kittear!</h1>
+    
+    <form action="login" method="POST">
+        
+        <div class="container inicio-sesion">
+            <div class="row justify-content-center">
+                <div class="col-md-6 my-auto">
+                    <label for="nombre" class="form-label">Nombre de usuario: </label>
+                    <input type="text" class="form-control" id="nombre" name="nombre"> 
+                </div>
+            </div>
+        
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <label for="contraseña" class="form-label">Contraseña:</label>
+                    <input type="password" class="form-control" id="contraseña" name="contraseña">
+                </div>
+            </div><br>
+       
+            {% if error %}
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="alert alert-danger" role="alert">{{error}}</div>
+                    </div>
+                </div>
+            {% endif %}
+        
+            <button type="submit" class="btn btn-outline-primary">Login</button>
+        </div>
+    </form>
+
+{% endblock %}

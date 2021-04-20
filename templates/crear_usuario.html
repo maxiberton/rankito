@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Rankito - Registro
+{% endblock %}
+
+
+{% block content %}
+
+    <h1 class="titulo-registro-usuario">¡Registrate para estar al día con los kitos creados por personas de todo el mundo!</h1>
+    
+    <form action="agregar_usuario" method="POST">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <label for="nombre" class="form-label">Ingrese su nombre: </label>
+                    <input type="text" class="form-control" id="nombre" name="nombre"> <span style="color:red;">{{error}}</span>
+                </div>
+            </div>
+        
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <label for="contraseña" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="contraseña" name="contraseña">
+                </div>
+            </div>
+
+            <br>
+
+            {% if error %}
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="alert alert-danger" role="alert">{{error}}</div>
+                    </div>
+                </div>
+            {% endif %}
+            
+        </div>
+        
+        <button type="submit" class="btn btn-outline-primary">Registrarme</button>
+
+    </form>
+
+{% endblock %}
